@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Tool PRO | Download Oficial</title>
     
-    <!-- AQUI ESTÁ A CORREÇÃO: Favicon puxando direto do seu arquivo icon.png -->
+    <!-- 1. FAVICON LOCAL (Carrega instantâneo) -->
     <link rel="icon" type="image/png" href="icon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-void: #030108; /* Preto espacial profundo */
+            --bg-void: #030108;
             --brand-pink: #ff2a5f;
             --brand-blue: #0071e3;
             --brand-green: #32d74b;
@@ -41,8 +41,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* --- 1. FUNDO GALÁXIA ULTRA PREMIUM --- */
 
         .cinematic-noise {
             position: fixed;
@@ -137,8 +135,6 @@
             box-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
-        /* --- 2. COMPONENTES DE VIDRO --- */
-
         .container {
             width: 100%;
             max-width: 680px; 
@@ -186,7 +182,6 @@
             opacity: 0;
         }
 
-        /* Card especial de Afiliado com destaque em Verde */
         .card-affiliate {
             border: 1px solid rgba(50, 215, 75, 0.3);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(50, 215, 75, 0.1), inset 0 1px 0 rgba(50, 215, 75, 0.2);
@@ -231,7 +226,7 @@
         .logo-img {
             width: 60px;
             height: 60px;
-            border-radius: 50%; /* Mantive os 50% para a logo ficar redondinha */
+            border-radius: 50%;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 42, 95, 0.2);
@@ -348,7 +343,6 @@
             background: linear-gradient(180deg, #1a85ff 0%, #0066cc 100%);
         }
 
-        /* Botão de Afiliado em Verde Dinâmico */
         .btn-affiliate {
             background: linear-gradient(180deg, #28a745 0%, #1e7e34 100%);
             box-shadow: 0 15px 30px rgba(40, 167, 69, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
@@ -403,52 +397,16 @@
             opacity: 0;
         }
 
-        @keyframes driftStars {
-            from { background-position: 0 0; }
-            to { background-position: 0 -400px; }
-        }
-        @keyframes rotateNebula {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.1); }
-            100% { transform: rotate(360deg) scale(1); }
-        }
-        @keyframes shooting {
-            0% { transform: translate(0, 0) rotate(-35deg); opacity: 1; }
-            10% { transform: translate(-100vw, 100vh) rotate(-35deg); opacity: 0; }
-            100% { opacity: 0; }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes floatLogo {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(-2deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        @keyframes buttonShimmer {
-            0% { left: -100%; }
-            20% { left: 200%; }
-            100% { left: 200%; }
-        }
-        @keyframes sweep {
-            0% { left: -100%; }
-            50% { left: 200%; }
-            100% { left: 200%; }
-        }
-        @keyframes pulseOnline {
-            0% { opacity: 1; box-shadow: 0 0 10px var(--success); }
-            50% { opacity: 0.6; box-shadow: 0 0 20px var(--success), 0 0 30px var(--success); }
-            100% { opacity: 1; box-shadow: 0 0 10px var(--success); }
-        }
-        @keyframes pulseBadge {
-            from { box-shadow: 0 0 10px rgba(255, 42, 95, 0.3); transform: scale(1); }
-            to { box-shadow: 0 0 20px rgba(255, 42, 95, 0.7); transform: scale(1.02); }
-        }
+        @keyframes driftStars { from { background-position: 0 0; } to { background-position: 0 -400px; } }
+        @keyframes rotateNebula { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.1); } 100% { transform: rotate(360deg) scale(1); } }
+        @keyframes shooting { 0% { transform: translate(0, 0) rotate(-35deg); opacity: 1; } 10% { transform: translate(-100vw, 100vh) rotate(-35deg); opacity: 0; } 100% { opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes floatLogo { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-8px) rotate(-2deg); } 100% { transform: translateY(0px) rotate(0deg); } }
+        @keyframes buttonShimmer { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
+        @keyframes sweep { 0% { left: -100%; } 50% { left: 200%; } 100% { left: 200%; } }
+        @keyframes pulseOnline { 0% { opacity: 1; box-shadow: 0 0 10px var(--success); } 50% { opacity: 0.6; box-shadow: 0 0 20px var(--success), 0 0 30px var(--success); } 100% { opacity: 1; box-shadow: 0 0 10px var(--success); } }
+        @keyframes pulseBadge { from { box-shadow: 0 0 10px rgba(255, 42, 95, 0.3); transform: scale(1); } to { box-shadow: 0 0 20px rgba(255, 42, 95, 0.7); transform: scale(1.02); } }
 
         @media (max-width: 550px) {
             .header-card { flex-direction: column; text-align: center; gap: 20px; }
@@ -461,7 +419,6 @@
 </head>
 <body>
 
-    <!-- ELEMENTOS DO FUNDO GALÁXIA -->
     <div class="starfield-1"></div>
     <div class="starfield-2"></div>
     <div class="galaxy-container">
@@ -472,18 +429,15 @@
     <div class="shooting-star"></div>
     <div class="cinematic-noise"></div>
 
-    <!-- CONTEÚDO DA PÁGINA -->
     <div class="container">
         
-        <!-- Suporte em Neon -->
         <div class="support-bar">
             Suporte técnico: <a href="mailto:livetoolpro@gmail.com">livetoolpro@gmail.com</a>
         </div>
 
-        <!-- Cabeçalho / Logo -->
         <div class="card card-1 header-card">
             <div class="logo-area">
-                <!-- AQUI ESTÁ A SEGUNDA CORREÇÃO: Logo puxando direto do seu arquivo icon.png -->
+                <!-- 2. LOGO LOCAL (Carrega instantâneo) -->
                 <img src="icon.png" alt="Live Tool PRO" class="logo-img" fetchpriority="high">
                 <div>
                     <h1 class="logo-title">Live Tool PRO</h1>
@@ -496,18 +450,17 @@
             </div>
         </div>
 
-        <!-- Seção de Download -->
         <div class="card card-2 download-section">
             <h2>Atualização Disponível! <span class="version-badge">v3.5</span></h2>
             <p>Baixe a última versão para garantir máxima estabilidade.</p>
             
-            <a href="#" class="btn-blue">
+            <!-- 3. DOWNLOAD DIRETO DO ZIP QUE VOCÊ COLOCOU NA PASTA -->
+            <a href="livetoolpro.zip" download="LiveToolPRO_v3.5.zip" class="btn-blue">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 Baixar Agora (.ZIP)
             </a>
         </div>
 
-        <!-- Seção de Vídeo Tutorial -->
         <div class="card card-3 video-section">
             <h3>Tutorial de instalação e como usar:</h3>
             <div class="video-container">
@@ -515,7 +468,6 @@
             </div>
         </div>
 
-        <!-- Seção de Revendedor e Afiliado (Diferenciada com borda/brilho verde) -->
         <div class="card card-4 card-affiliate video-section">
             <h3>💰 Seja um Revendedor e Afiliado:</h3>
             <div class="video-container" style="margin-bottom: 24px;">
