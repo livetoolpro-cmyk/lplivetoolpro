@@ -10,6 +10,10 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --bg-void: #030108;
             --brand-pink: #ff2a5f;
@@ -435,7 +439,14 @@
             <strong style="color: #ffffff; font-size: 1rem; display: block; margin-bottom: 10px;">📌 Informação Importante:</strong>
             <span style="font-size: 0.9rem; color: #e2e8f0; display: block; margin-bottom: 15px; line-height: 1.4;">Após o pagamento, você receberá dois <span style="white-space: nowrap;">e-mails</span>: um com o link desse site e outro com sua chave de acesso. Verifique todas as caixas de entrada do <span style="white-space: nowrap;">e-mail</span>, inclusive o spam.</span>
             
-            <a href="https://pay.cakto.com.br/rs47oap_1045672" target="_blank" class="btn-blue btn-affiliate" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; color: #ffffff; text-shadow: none; margin-bottom: 10px;">Renovar Assinatura</a>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 10px;">
+                <a href="https://pay.cakto.com.br/rs47oap_1045672" target="_blank" class="btn-blue btn-affiliate" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; color: #ffffff; text-shadow: none; width: 100%; justify-content: center;">Renovar Assinatura</a>
+                
+                <a href="#download-area" style="padding: 10px 22px; font-size: 0.9rem; border-radius: 8px; color: #a1a1aa; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: all 0.3s ease; width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;" onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.3)';" onmouseout="this.style.background='transparent'; this.style.color='#a1a1aa'; this.style.borderColor='rgba(255,255,255,0.15)';">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    Já realizei o pagamento
+                </a>
+            </div>
             
             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">
                 Suporte técnico: <a href="mailto:livetoolpro@gmail.com">livetoolpro@gmail.com</a>
@@ -457,7 +468,7 @@
             </div>
         </div>
 
-        <div class="card card-2 download-section">
+        <div id="download-area" class="card card-2 download-section" style="scroll-margin-top: 20px;">
             <h2>Atualização Disponível! <span class="version-badge">v3.5</span></h2>
             <p>Baixe a última versão para garantir máxima estabilidade.</p>
             
