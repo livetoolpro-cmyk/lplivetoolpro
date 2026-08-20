@@ -275,6 +275,15 @@
             animation: pulseOnline 2s infinite;
         }
 
+        .warning-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #facc15;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+            animation: pulseWarning 2s infinite;
+        }
+
         .download-section {
             text-align: center;
             padding: 50px 38px;
@@ -410,6 +419,7 @@
         @keyframes buttonShimmer { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
         @keyframes sweep { 0% { left: -100%; } 50% { left: 200%; } 100% { left: 200%; } }
         @keyframes pulseOnline { 0% { opacity: 1; box-shadow: 0 0 10px var(--success); } 50% { opacity: 0.6; box-shadow: 0 0 20px var(--success), 0 0 30px var(--success); } 100% { opacity: 1; box-shadow: 0 0 10px var(--success); } }
+        @keyframes pulseWarning { 0% { opacity: 1; box-shadow: 0 0 10px #facc15; } 50% { opacity: 0.6; box-shadow: 0 0 20px #facc15, 0 0 30px #facc15; } 100% { opacity: 1; box-shadow: 0 0 10px #facc15; } }
         @keyframes pulseBadge { from { box-shadow: 0 0 10px rgba(255, 42, 95, 0.3); transform: scale(1); } to { box-shadow: 0 0 20px rgba(255, 42, 95, 0.7); transform: scale(1.02); } }
 
         @media (max-width: 550px) {
@@ -436,14 +446,16 @@
     <div class="container">
         
         <div class="card card-0 support-bar" style="padding: 15px 20px; width: 100%; max-width: 380px; margin: 0 auto;">
-            <strong style="color: #ffffff; font-size: 1rem; display: block; margin-bottom: 10px;">📌 Informação Importante:</strong>
+            <strong style="color: #ffffff; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px;">
+                <div class="warning-dot"></div> Informação Importante:
+            </strong>
             <span style="font-size: 0.9rem; color: #e2e8f0; display: block; margin-bottom: 15px; line-height: 1.4;">Após o pagamento, você receberá dois <span style="white-space: nowrap;">e-mails</span>: um com o link desse site e outro com sua chave de acesso. Verifique todas as caixas de entrada do <span style="white-space: nowrap;">e-mail</span>, inclusive o spam.</span>
             
             <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 10px;">
                 <a href="https://pay.cakto.com.br/rs47oap_1045672" target="_blank" class="btn-blue btn-affiliate" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; color: #ffffff; text-shadow: none; width: 100%; justify-content: center;">Renovar Assinatura</a>
                 
-                <a href="#download-area" style="padding: 10px 22px; font-size: 0.9rem; border-radius: 8px; color: #a1a1aa; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: all 0.3s ease; width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;" onmouseover="this.style.background='rgba(255,255,255,0.05)'; this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.3)';" onmouseout="this.style.background='transparent'; this.style.color='#a1a1aa'; this.style.borderColor='rgba(255,255,255,0.15)';">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <a href="#download-area" class="btn-blue" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; width: 100%; justify-content: center;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     Já realizei o pagamento
                 </a>
             </div>
