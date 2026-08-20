@@ -365,6 +365,15 @@
             background: linear-gradient(180deg, #34ce57 0%, #218838 100%);
         }
 
+        .btn-yellow {
+            background: linear-gradient(180deg, #eab308 0%, #ca8a04 100%);
+            box-shadow: 0 15px 30px rgba(234, 179, 8, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+        .btn-yellow:hover {
+            box-shadow: 0 20px 40px rgba(234, 179, 8, 0.6), 0 0 30px rgba(234, 179, 8, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+            background: linear-gradient(180deg, #facc15 0%, #d97706 100%);
+        }
+
         .video-section {
             padding: 30px 38px 38px 38px;
         }
@@ -458,6 +467,11 @@
                     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     Já realizei o pagamento
                 </a>
+
+                <a href="#tutorial-area" class="btn-blue btn-yellow" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; color: #ffffff; text-shadow: none; width: 100%; justify-content: center;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Assistir tutorial completo
+                </a>
             </div>
             
             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 20px; position: relative; z-index: 2;">
@@ -489,9 +503,14 @@
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 Baixar Agora (.ZIP)
             </a>
+
+            <a href="#tutorial-area" class="btn-blue btn-yellow" style="margin-top: 15px;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Assistir tutorial completo
+            </a>
         </div>
 
-        <div class="card card-3 video-section">
+        <div id="tutorial-area" class="card card-3 video-section" style="scroll-margin-top: 20px;">
             <h3>Tutorial de instalação e como usar:</h3>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_AQUI" title="Tutorial" allowfullscreen></iframe>
