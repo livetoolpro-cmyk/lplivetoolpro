@@ -53,6 +53,7 @@
             opacity: 0.06;
             z-index: 100;
             pointer-events: none;
+            transform: translateZ(0); /* Aceleração de Hardware */
         }
 
         .starfield-1 {
@@ -72,6 +73,8 @@
             background-size: 400px 400px;
             animation: driftStars 120s linear infinite;
             opacity: 0.4;
+            pointer-events: none; /* Ignora toques */
+            transform: translateZ(0); /* Aceleração de Hardware */
         }
 
         .starfield-2 {
@@ -87,6 +90,8 @@
             background-size: 300px 300px;
             animation: driftStars 70s linear infinite;
             opacity: 0.7;
+            pointer-events: none; /* Ignora toques */
+            transform: translateZ(0); /* Aceleração de Hardware */
         }
 
         .galaxy-container {
@@ -95,6 +100,8 @@
             overflow: hidden;
             z-index: -4;
             filter: blur(100px);
+            pointer-events: none; /* Ignora toques */
+            transform: translateZ(0); /* Aceleração de Hardware */
         }
 
         .nebula {
@@ -102,6 +109,7 @@
             border-radius: 50%;
             opacity: 0.4;
             animation: rotateNebula 60s linear infinite;
+            will-change: transform; /* Aviso prévio para a GPU */
         }
 
         .nebula-purple {
@@ -137,6 +145,7 @@
             opacity: 0;
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(255,255,255,0.5);
+            pointer-events: none;
         }
 
         .container {
@@ -183,6 +192,8 @@
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             opacity: 0;
+            -webkit-backface-visibility: hidden; /* Aceleração de Hardware para o Vidro */
+            backface-visibility: hidden;
         }
 
         .card-affiliate {
