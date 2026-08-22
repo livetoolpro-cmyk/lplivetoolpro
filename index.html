@@ -19,7 +19,7 @@
             --brand-pink: #ff2a5f;
             --brand-blue: #0071e3;
             --brand-green: #32d74b;
-            --glass-bg: rgba(15, 15, 20, 0.85); /* Fundo um pouco mais opaco para compensar a falta do blur */
+            --glass-bg: rgba(15, 15, 20, 0.85);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-main: #ffffff;
             --text-muted: #8b8b93;
@@ -44,110 +44,6 @@
             position: relative;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-        }
-
-        /* NOVO NOISE LEVE: Micro-pontilhados CSS puros no lugar da matemática SVG pesada */
-        .cinematic-noise {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 4px 4px;
-            z-index: 100;
-            pointer-events: none;
-            transform: translateZ(0); 
-        }
-
-        .starfield-1 {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -3;
-            background-image: 
-                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 90px 40px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 200px 50px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 250px 150px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 300px 80px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 350px 190px, rgba(255,255,255,0.6), rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 400px 400px;
-            animation: driftStars 120s linear infinite;
-            opacity: 0.4;
-            pointer-events: none; 
-            transform: translateZ(0); 
-        }
-
-        .starfield-2 {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -3;
-            background-image: 
-                radial-gradient(1.5px 1.5px at 50px 160px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 130px 250px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 220px 310px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2.5px 2.5px at 330px 220px, rgba(255,255,255,0.5), rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 300px 300px;
-            animation: driftStars 70s linear infinite;
-            opacity: 0.7;
-            pointer-events: none; 
-            transform: translateZ(0); 
-        }
-
-        .galaxy-container {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            overflow: hidden;
-            z-index: -4;
-            /* Filter blur REMOVIDO para extrema velocidade */
-            pointer-events: none; 
-            transform: translateZ(0); 
-        }
-
-        /* NEBULOSAS LEVES: O próprio gradiente faz o desfoque suave terminando em transparente */
-        .nebula {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.4;
-            animation: rotateNebula 60s linear infinite;
-            will-change: transform; 
-        }
-
-        .nebula-purple {
-            width: 70vw; height: 70vw;
-            background: radial-gradient(circle, rgba(75, 0, 130, 0.25) 0%, transparent 60%);
-            top: -20vh; left: -20vw;
-        }
-
-        .nebula-blue {
-            width: 60vw; height: 60vw;
-            background: radial-gradient(circle, rgba(0, 113, 227, 0.2) 0%, transparent 60%);
-            bottom: -20vh; right: -10vw;
-            animation-direction: reverse;
-            animation-duration: 80s;
-        }
-
-        .nebula-pink {
-            width: 50vw; height: 50vw;
-            background: radial-gradient(circle, rgba(255, 42, 95, 0.1) 0%, transparent 60%);
-            top: 20vh; left: 30vw;
-            animation-duration: 100s;
-        }
-
-        .shooting-star {
-            position: fixed;
-            width: 150px;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
-            top: 10%; right: -20%;
-            transform: rotate(-35deg);
-            z-index: -2;
-            animation: shooting 12s linear infinite;
-            opacity: 0;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255,255,255,0.5);
-            pointer-events: none;
         }
 
         .container {
@@ -184,7 +80,6 @@
 
         .card {
             background: var(--glass-bg);
-            /* Backdrop-filter REMOVIDO para extrema velocidade */
             border: 1px solid var(--glass-border);
             padding: 30px 38px;
             border-radius: 24px;
@@ -431,9 +326,6 @@
             opacity: 0;
         }
 
-        @keyframes driftStars { from { background-position: 0 0; } to { background-position: 0 -400px; } }
-        @keyframes rotateNebula { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.1); } 100% { transform: rotate(360deg) scale(1); } }
-        @keyframes shooting { 0% { transform: translate(0, 0) rotate(-35deg); opacity: 1; } 10% { transform: translate(-100vw, 100vh) rotate(-35deg); opacity: 0; } 100% { opacity: 0; } }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes floatLogo { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-8px) rotate(-2deg); } 100% { transform: translateY(0px) rotate(0deg); } }
@@ -453,16 +345,6 @@
     </style>
 </head>
 <body>
-
-    <div class="starfield-1"></div>
-    <div class="starfield-2"></div>
-    <div class="galaxy-container">
-        <div class="nebula nebula-purple"></div>
-        <div class="nebula nebula-blue"></div>
-        <div class="nebula nebula-pink"></div>
-    </div>
-    <div class="shooting-star"></div>
-    <div class="cinematic-noise"></div>
 
     <div class="container">
         
