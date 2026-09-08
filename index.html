@@ -7,31 +7,28 @@
     
     <!-- 1. FAVICON LOCAL (Carrega instantâneo) -->
     <link rel="icon" type="image/png" href="icon.png">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
         }
-
         :root {
             --bg-void: #030108;
             --brand-pink: #ff2a5f;
             --brand-blue: #0071e3;
             --brand-green: #32d74b;
+            --brand-purple: #8b5cf6;
             --glass-bg: rgba(15, 15, 20, 0.85);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-main: #ffffff;
             --text-muted: #8b8b93;
             --success: #32d74b;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             background-color: var(--bg-void);
@@ -45,7 +42,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-
         .container {
             width: 100%;
             max-width: 680px; 
@@ -54,7 +50,6 @@
             gap: 28px;
             z-index: 10;
         }
-
         .support-bar {
             text-align: center;
             font-size: 0.85rem;
@@ -62,7 +57,6 @@
             font-weight: 500;
             animation: fadeInDown 1s ease forwards;
         }
-
         .support-bar a {
             color: var(--brand-pink);
             text-decoration: none;
@@ -72,12 +66,10 @@
             transition: all 0.3s ease;
             margin-left: 6px;
         }
-
         .support-bar a:hover {
             color: #ffffff;
             text-shadow: 0 0 15px #fff, 0 0 30px var(--brand-pink);
         }
-
         .card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -91,12 +83,14 @@
             -webkit-backface-visibility: hidden; 
             backface-visibility: hidden;
         }
-
         .card-affiliate {
             border: 1px solid rgba(50, 215, 75, 0.3);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(50, 215, 75, 0.1), inset 0 1px 0 rgba(50, 215, 75, 0.2);
         }
-
+        .card-key {
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(139, 92, 246, 0.1), inset 0 1px 0 rgba(139, 92, 246, 0.2);
+        }
         .card::before {
             content: '';
             position: absolute;
@@ -104,36 +98,35 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
             animation: sweep 8s infinite;
         }
-
         .card:hover {
             transform: translateY(-6px) scale(1.02);
             border-color: rgba(255, 255, 255, 0.2);
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 113, 227, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
-
         .card-affiliate:hover {
             border-color: rgba(50, 215, 75, 0.5);
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(50, 215, 75, 0.25), inset 0 1px 0 rgba(50, 215, 75, 0.4);
         }
-
+        .card-key:hover {
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(139, 92, 246, 0.25), inset 0 1px 0 rgba(139, 92, 246, 0.4);
+        }
         .card-0 { animation: fadeInUp 0.8s ease forwards 0.1s; }
         .card-1 { animation: fadeInUp 0.8s ease forwards 0.2s; }
         .card-2 { animation: fadeInUp 0.8s ease forwards 0.4s; }
         .card-3 { animation: fadeInUp 0.8s ease forwards 0.6s; }
         .card-4 { animation: fadeInUp 0.8s ease forwards 0.8s; }
-
+        .card-5 { animation: fadeInUp 0.8s ease forwards 1.0s; }
         .header-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-
         .logo-area {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-
         .logo-img {
             width: 60px;
             height: 60px;
@@ -143,7 +136,6 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 42, 95, 0.2);
             animation: floatLogo 4s ease-in-out infinite;
         }
-
         .logo-title {
             font-size: 1.5rem;
             font-weight: 800;
@@ -152,14 +144,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .logo-subtitle {
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-top: 4px;
             font-weight: 400;
         }
-
         .status-badge {
             display: flex;
             align-items: center;
@@ -172,7 +162,6 @@
             border-radius: 100px;
             border: 1px solid rgba(50, 215, 75, 0.2);
         }
-
         .status-dot {
             width: 8px;
             height: 8px;
@@ -181,7 +170,6 @@
             box-shadow: 0 0 10px var(--success), 0 0 20px var(--success);
             animation: pulseOnline 2s infinite;
         }
-
         .warning-dot {
             width: 8px;
             height: 8px;
@@ -190,7 +178,6 @@
             box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
             animation: pulseWarning 2s infinite;
         }
-
         .download-section {
             text-align: center;
             padding: 50px 38px;
@@ -198,7 +185,6 @@
             flex-direction: column;
             align-items: center;
         }
-
         .download-section h2 {
             font-size: 1.9rem;
             font-weight: 800;
@@ -210,7 +196,6 @@
             gap: 12px;
             flex-wrap: wrap;
         }
-
         .version-badge {
             background: linear-gradient(135deg, var(--brand-pink), #ff758c);
             color: #ffffff;
@@ -222,7 +207,6 @@
             letter-spacing: 0.5px;
             animation: pulseBadge 2s infinite alternate;
         }
-
         .download-section p {
             color: var(--text-muted);
             font-size: 1.05rem;
@@ -230,7 +214,6 @@
             line-height: 1.6;
             max-width: 90%;
         }
-
         .btn-blue {
             background: linear-gradient(180deg, var(--brand-blue) 0%, #005bb5 100%);
             color: #ffffff;
@@ -247,7 +230,6 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-
         .btn-blue::before {
             content: '';
             position: absolute;
@@ -256,13 +238,11 @@
             transform: skewX(-25deg);
             animation: buttonShimmer 3s infinite;
         }
-
         .btn-blue:hover {
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 20px 40px rgba(0, 113, 227, 0.6), 0 0 30px rgba(0, 113, 227, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.4);
             background: linear-gradient(180deg, #1a85ff 0%, #0066cc 100%);
         }
-
         .btn-affiliate {
             background: linear-gradient(180deg, #28a745 0%, #1e7e34 100%);
             box-shadow: 0 15px 30px rgba(40, 167, 69, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
@@ -271,7 +251,6 @@
             box-shadow: 0 20px 40px rgba(40, 167, 69, 0.6), 0 0 30px rgba(40, 167, 69, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.4);
             background: linear-gradient(180deg, #34ce57 0%, #218838 100%);
         }
-
         .btn-yellow {
             background: linear-gradient(180deg, #eab308 0%, #ca8a04 100%);
             box-shadow: 0 15px 30px rgba(234, 179, 8, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
@@ -280,11 +259,17 @@
             box-shadow: 0 20px 40px rgba(234, 179, 8, 0.6), 0 0 30px rgba(234, 179, 8, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.4);
             background: linear-gradient(180deg, #facc15 0%, #d97706 100%);
         }
-
+        .btn-purple {
+            background: linear-gradient(180deg, #8b5cf6 0%, #6d28d9 100%);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+        .btn-purple:hover {
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+            background: linear-gradient(180deg, #a78bfa 0%, #7c3aed 100%);
+        }
         .video-section {
             padding: 30px 38px 38px 38px;
         }
-
         .video-section h3 {
             font-size: 1.25rem;
             font-weight: 600;
@@ -292,7 +277,6 @@
             text-align: center;
             letter-spacing: -0.3px;
         }
-
         .video-container {
             position: relative;
             width: 100%;
@@ -305,27 +289,23 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.4);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-
         .video-container:hover {
             transform: scale(1.03);
             border-color: rgba(255,255,255,0.3);
             box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(0, 113, 227, 0.2);
         }
-
         .video-container iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
-
         footer {
             margin-top: 40px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.85rem;
-            animation: fadeInUp 0.8s ease forwards 1.0s;
+            animation: fadeInUp 0.8s ease forwards 1.2s;
             opacity: 0;
         }
-
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes floatLogo { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-8px) rotate(-2deg); } 100% { transform: translateY(0px) rotate(0deg); } }
@@ -334,7 +314,6 @@
         @keyframes pulseOnline { 0% { opacity: 1; box-shadow: 0 0 10px var(--success); } 50% { opacity: 0.6; box-shadow: 0 0 20px var(--success), 0 0 30px var(--success); } 100% { opacity: 1; box-shadow: 0 0 10px var(--success); } }
         @keyframes pulseWarning { 0% { opacity: 1; box-shadow: 0 0 10px #facc15; } 50% { opacity: 0.6; box-shadow: 0 0 20px #facc15, 0 0 30px #facc15; } 100% { opacity: 1; box-shadow: 0 0 10px #facc15; } }
         @keyframes pulseBadge { from { box-shadow: 0 0 10px rgba(255, 42, 95, 0.3); transform: scale(1); } to { box-shadow: 0 0 20px rgba(255, 42, 95, 0.7); transform: scale(1.02); } }
-
         @media (max-width: 550px) {
             .header-card { flex-direction: column; text-align: center; gap: 20px; }
             .logo-area { flex-direction: column; gap: 12px; }
@@ -345,7 +324,6 @@
     </style>
 </head>
 <body>
-
     <div class="container">
         
         <div class="card card-0 support-bar" style="padding: 15px 20px; width: 100%; max-width: 380px; margin: 0 auto;">
@@ -361,7 +339,6 @@
                     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     Já realizei o pagamento
                 </a>
-
                 <a href="#tutorial-area" class="btn-blue btn-yellow" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; color: #ffffff; text-shadow: none; width: 100%; justify-content: center;">
                     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                     Assistir tutorial completo
@@ -372,7 +349,6 @@
                 Suporte técnico: <a href="mailto:livetoolpro@gmail.com">livetoolpro@gmail.com</a>
             </div>
         </div>
-
         <div class="card card-1 header-card">
             <div class="logo-area">
                 <!-- 2. LOGO LOCAL (Carrega instantâneo) -->
@@ -387,7 +363,6 @@
                 Status: Online
             </div>
         </div>
-
         <div id="download-area" class="card card-2 download-section" style="scroll-margin-top: 20px;">
             <h2>Atualização Disponível! <span class="version-badge">v3.5</span></h2>
             <p>Baixe a última versão para garantir máxima estabilidade.</p>
@@ -397,21 +372,36 @@
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 Baixar ferramenta (.ZIP)
             </a>
-
             <a href="#tutorial-area" class="btn-blue btn-yellow" style="margin-top: 15px;">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                 Assistir tutorial completo
             </a>
+            <!-- NOVO BOTÃO ROXO: leva ao player que ensina a receber a chave -->
+            <a href="#chave-area" class="btn-blue btn-purple" style="margin-top: 15px;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                Não recebi a chave de acesso
+            </a>
         </div>
-
         <div id="tutorial-area" class="card card-3 video-section" style="scroll-margin-top: 20px;">
-            <h3>Tutorial de instalação e como usar:</h3>
+            <h3>🎬 Tutorial de instalação e como usar:</h3>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_AQUI" title="Tutorial" allowfullscreen></iframe>
             </div>
         </div>
-
-        <div class="card card-4 card-affiliate video-section">
+        <!-- NOVO PLAYER: como receber a chave de acesso -->
+        <div id="chave-area" class="card card-4 card-key video-section" style="scroll-margin-top: 20px;">
+            <h3>🔑 Não recebi a chave de acesso: veja o que fazer</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_DA_CHAVE" title="Como receber a chave de acesso" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; margin-top: 24px;">
+                <a href="mailto:livetoolpro@gmail.com?subject=N%C3%A3o%20recebi%20a%20chave%20de%20acesso" class="btn-blue btn-purple">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Falar com o suporte
+                </a>
+            </div>
+        </div>
+        <div class="card card-5 card-affiliate video-section">
             <h3>💰 Seja um Revendedor e Afiliado:</h3>
             <div class="video-container" style="margin-bottom: 24px;">
                 <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO_AQUI" title="Afiliado" allowfullscreen></iframe>
@@ -424,12 +414,9 @@
                 </a>
             </div>
         </div>
-
     </div>
-
     <footer>
         <p>&copy; 2026 Live Tool PRO. A revolução das transmissões.</p>
     </footer>
-
 </body>
 </html>
